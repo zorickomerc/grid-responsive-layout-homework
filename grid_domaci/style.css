@@ -1,0 +1,126 @@
+:root {
+    --pozadina: #359ad9;
+    --span_pozadina: #f4f3f1;
+}
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-rows: 0.5fr 2.5fr 1.4fr;
+    margin: 0 auto;
+    row-gap: 1rem;
+    justify-content: center;
+    max-width: 1300px;
+}
+header {
+    display: flex;
+    align-items: center;
+} header>h1 {
+    font-weight: 500;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: 1fr 1fr;
+    gap: 37px;
+    margin: 0;
+}
+/* -------- BOX ----------*/ 
+.box {
+    width: auto;
+    height: auto;
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box span {
+    text-align: center;
+    width: 100%;
+    flex-basis: 13%;
+    background-color: var(--span_pozadina);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 0.25rem;
+}
+
+.box .image {
+    background-color: var(--pozadina);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} .image>img {
+    max-width: 200px;
+    width: 100%;
+}
+
+/* -------- BOX ----------*/ 
+
+article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+p:first-child {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/*MEDIA QUERIES*/ 
+
+
+@media screen and (max-width: 1023px) and (min-width: 481px) {
+    body {
+        min-height: 100vh;
+        height: 100%;
+        margin: 2% 2%;
+        grid-template-rows: 5% 60% 35%;
+    }
+    section {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(4, auto);
+    }
+    p:first-child {
+        font-size: 1.25em;
+    }
+}
+
+
+/*PHONES*/
+@media all and (max-width: 480px) and (min-width: 1px) {
+    body {
+        min-height: 100vh;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 1px 1%;
+    } header {
+        flex-basis: 20%;
+        display: block;
+        flex-grow: 1;
+        text-align: center;
+    } section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } article {
+        flex-basis: 20%;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
+/*PHONES*/
